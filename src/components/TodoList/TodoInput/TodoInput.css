@@ -1,0 +1,53 @@
+.todo-input-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom:40px ;
+}
+.todo-input-container input{
+    width: 100%;
+    font-size: 16px;
+    color: #8FA8C1;
+    padding: 8px;
+    border-radius: 4px;
+    background: #152431;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(109, 108, 108, 0.651);
+}
+
+.todo-input-container input:hover::placeholder{
+    opacity: 0.8;
+}
+
+.todo-input-container input:hover{
+    border: 1px solid grey;
+}
+.todo-input-container input::placeholder{
+    opacity: .5;
+}
+.todo-input-container button{
+    padding: 10px;
+    width: 30%;
+    margin-left: 15px;
+    background:#0C5488;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: none;
+    color: #8FA8C1;
+}
+.todo-input-container button:hover{
+    color:#fff;
+    font-weight: 500;
+    background: #093c60;
+}
+
+@media screen and (max-width: 600px) {
+    .todo-input-container button{
+        width: 69%;
+    }
+   
+  }
+  

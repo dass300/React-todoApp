@@ -1,0 +1,70 @@
+.edit-data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-data input {
+  width: 100%;
+  font-size: 16px;
+  color: #8fa8c1;
+  padding: 8px;
+  border-radius: 4px;
+  background: #152431;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(109, 108, 108, 0.651);
+}
+
+.edit-data input::placeholder {
+  opacity: 0.5;
+}
+.edit-data input:hover::placeholder {
+  opacity: 0.8;
+}
+
+.edit-data input:hover {
+  border: 1px solid grey;
+}
+
+.edit-data button {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  width: 25%;
+  margin-left: 15px;
+  background: #0c5488;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  color: #8fa8c1;
+}
+.edit-data .cancel-button {
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  background: #8fa8c1;
+  color: #152431;
+}
+
+.edit-data button:hover {
+  color: #fff;
+  font-weight: 500;
+  background: #093c60;
+}
+.edit-data .cancel-button:hover {
+  color: #000;
+  font-weight: 500;
+  background:#ffeb3b ;
+  transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width: 600px) {
+  .edit-data button{
+    width: 27%;
+  }
+ 
+}
