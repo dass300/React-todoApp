@@ -25,6 +25,10 @@ export const TodoInput = ({ addTodo }) => {
         placeholder="New Todo..."
         autoFocus
       />
+
+
+
+      
       <button type="submit">Add Todo</button>
     </form>
   );

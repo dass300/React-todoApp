@@ -12,9 +12,7 @@ export const TodoList = () => {
     setTodos([...todos, newTodo]);
   };
 
-  // const editTodo = (id)=>{
-  // setEditTodoId(id)
-  // }
+
   const editTodo = (id) => {
     const todo = todos.find((todo) => todo.id === id);
     if (!todo.completed) {
@@ -22,13 +20,6 @@ export const TodoList = () => {
     }
   };
 
-  // const deleteTodo = (id) => {
-  //   setTodos(
-  //     todos.map((todo) =>
-  //       todo.id === id ? { ...todo, completed: true } : todo
-  //     )
-  //   );
-  // };
 
   const saveTodo = (editedTodo) => {
     setTodos(
