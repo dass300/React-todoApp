@@ -30,8 +30,10 @@
     "url": "https://github.com/dass300/React-todoApp/issues"
   },
   "homepage": "https://github.com/dass300/React-todoApp#readme",
-  
+
   "dependencies": {
-    "react-icons": "^4.10.1"
+    "react-icons": "^4.10.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
