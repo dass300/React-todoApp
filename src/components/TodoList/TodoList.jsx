@@ -5,38 +5,48 @@ import { TodoInput } from "./TodoInput/TodoInput";
 import { useState } from "react";
 
 export const TodoList = () => {
-  
   const [todos, setTodos] = useState([]);
   const [editTodoId, setEditTodoId] = useState(null);
 
-  const addTodo = (title) => {
-    const newTodo = {
-      id: Date.now(),
-      title: title
-    };
+  const addTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
   };
 
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
+  // const editTodo = (id)=>{
+  // setEditTodoId(id)
+  // }
   const editTodo = (id) => {
-    setEditTodoId(id);
+    const todo = todos.find((todo) => todo.id === id);
+    if (!todo.completed) {
+      setEditTodoId(id);
+    }
   };
+
+  // const deleteTodo = (id) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, completed: true } : todo
+  //     )
+  //   );
+  // };
 
   const saveTodo = (editedTodo) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === editedTodo.id ? editedTodo : todo
+    setTodos(
+      todos.map((todo) => (todo.id === editedTodo.id ? editedTodo : todo))
     );
-
-    setTodos(updatedTodos);
     setEditTodoId(null);
   };
 
   const cancelEdit = () => {
     setEditTodoId(null);
+  };
+
+  const toggleStrikeThrough = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
   };
 
   return (
@@ -45,7 +55,13 @@ export const TodoList = () => {
         <h1>Todo List</h1>
       </header>
       <TodoInput addTodo={addTodo} />
-      <TodoData todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
+
+      <TodoData
+        todos={todos}
+        editTodo={editTodo}
+        toggleStrikeThrough={toggleStrikeThrough}
+      />
+
       {editTodoId !== null && (
         <EditData
           todo={todos.find((todo) => todo.id === editTodoId)}
